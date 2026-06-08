@@ -33,3 +33,7 @@ jobs:
       - name: Run training
         run: |
           python src/train.py
+
+      - name: Run batch inference
+        run: |
+          python src/batch_predict.py
