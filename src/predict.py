@@ -4,9 +4,18 @@ import joblib
 import pandas as pd
 from flask import Flask, jsonify, request
 
+# Este Script es para levantar servicio de API de manera local 
+# con las librerías de flask/FlastAPI
 
-MODEL_PATH = Path("models/model.pkl")
+# En el caso de DataBricks no es necesario ejecutar este script
+# Por que la publicacion del modelo en un EndPoint es mas facil
+# Para que funcione se debe registra el modelo en  AI/ML -> Modelo y esto se hizo en el Train.py
+# Y luego se creo el  EndPoint en Opcion AI/ML -> Serving 
+
+
+MODEL_PATH          = Path("models/model.pkl")
 PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
+
 
 app = Flask(__name__)
 

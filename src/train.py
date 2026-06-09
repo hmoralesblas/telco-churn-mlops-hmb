@@ -4,6 +4,7 @@ from pathlib import Path
 import joblib
 import mlflow
 import mlflow.sklearn
+from mlflow.models import infer_signature
 import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier
@@ -11,9 +12,22 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.model_selection import train_test_split, GridSearchCV
 
 
-PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
-MODEL_PATH = Path("models/model.pkl")
-METRICS_PATH = Path("models/metrics.json")
+try:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    print("entro al try")
+    
+except NameError:
+   
+    PROJECT_ROOT = Path("processed_churn.csv").resolve().parent.parent
+    print("entro al except")
+
+#PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
+#MODEL_PATH = Path("models/model.pkl")
+#METRICS_PATH = Path("models/metrics.json")
+
+PROCESSED_DATA_PATH = PROJECT_ROOT/"data/processed_churn.csv"
+MODEL_PATH   = PROJECT_ROOT/"models/model.pkl"
+METRICS_PATH = PROJECT_ROOT/"models/metrics.json"
 
 
 def load_processed_data(path: Path) -> pd.DataFrame:
@@ -59,8 +73,8 @@ def train_model() -> None:
         n_jobs=-1,
         verbose=1
     )
-
-    mlflow.set_experiment("fintech_churn_mlops")
+ #  mlflow.set_experiment("fintech_churn_mlops")
+    mlflow.set_experiment("/Users/hmoralesblas@gmail.com/fintech_churn_mlops")
 
     with mlflow.start_run(run_name="random_forest_gridsearch"):
 
@@ -115,9 +129,19 @@ def train_model() -> None:
         with open(METRICS_PATH, "w", encoding="utf-8") as file:
             json.dump(metrics, file, indent=4)
 
+# Parametros el modelo de reqgistrar requiere una firma 
+        sample_input = X_test.head(5)
+        sample_output = best_model.predict(sample_input)
+
+        signature = infer_signature(
+            sample_input,
+            sample_output
+        )
+
         mlflow.sklearn.log_model(
             sk_model=best_model,
             artifact_path="model",
+            signature=signature,
             registered_model_name="TelcoChurnModel"
         )
 

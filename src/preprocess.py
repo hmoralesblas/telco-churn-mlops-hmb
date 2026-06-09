@@ -1,14 +1,35 @@
 import pandas as pd
 from pathlib import Path
 
+try:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    print("entro al try")
+    
+except NameError:
+   
+    PROJECT_ROOT = Path("telco_customer_churn_mlops.csv").resolve().parent.parent
+    print("entro al except")
 
-RAW_DATA_PATH = Path("data/telco_customer_churn_mlops.csv")
-PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
+#RAW_DATA_PATH = Path("data/telco_customer_churn_mlops.csv")
+#PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
+#RAW_DATA_PATH = PROJECT_ROOT/"data/telco_customer_churn_mlops.csv"
+#PROCESSED_DATA_PATH = PROJECT_ROOT/"data/processed_churn.csv"
 
+RAW_DATA_PATH = PROJECT_ROOT/"data/telco_customer_churn_mlops.csv"
+PROCESSED_DATA_PATH = PROJECT_ROOT/"data/processed_churn.csv"
+
+print("PROJECT_ROOT:", PROJECT_ROOT)
+print("RAW_DATA_PATH:", RAW_DATA_PATH)
+print("EXISTS:", RAW_DATA_PATH.exists())
 
 def load_data(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(f"No se encontró el archivo: {path}")
+        print(f"Archivo no encontrado en {path}, creando un DataFrame de ejemplo para pruebas.")
+        
+        df_sample = pd.DataFrame({"customer_id": [1, 2], "monthly_charges": [70.5, 80.0], "tenure_months": [12, 24], "support_tickets_last_6m": [1, 0], "senior_citizen": [0, 1], "churn": ["Yes", "No"]})
+        return df_sample
+
     return pd.read_csv(path)
 
 
