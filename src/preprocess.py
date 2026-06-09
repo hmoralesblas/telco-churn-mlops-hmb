@@ -2,11 +2,12 @@ import pandas as pd
 from pathlib import Path
 
 try:
-    PROJECT_ROOT = Path("telco_customer_churn_mlops.csv").resolve().parent.parent
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
     print("entro al try")
     
 except NameError:
-    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+   
+    PROJECT_ROOT = Path("telco_customer_churn_mlops.csv").resolve().parent.parent
     print("entro al except")
 
 #RAW_DATA_PATH = Path("data/telco_customer_churn_mlops.csv")
