@@ -3,10 +3,16 @@ from pathlib import Path
 import joblib
 import pandas as pd
 
+PROJECT_ROOT = Path("model.pkl").resolve().parent.parent
 
-MODEL_PATH = Path("models/model.pkl")
-PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
-OUTPUT_PATH = Path("data/batch_predictions.csv")
+
+# MODEL_PATH          = Path("models/model.pkl")
+# PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
+# OUTPUT_PATH         = Path("data/batch_predictions.csv")
+
+MODEL_PATH              = PROJECT_ROOT/"models/model.pkl"
+PROCESSED_DATA_PATH     = PROJECT_ROOT/"data/processed_churn.csv"
+OUTPUT_PATH             = PROJECT_ROOT/"data/batch_predictions.csv"
 
 
 def main() -> None:

@@ -7,7 +7,7 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,67,40.74,1,1,False,False,False,True,0,No Churn
 0,45,133.33,6,1,True,False,False,False,1,Churn
 0,13,48.5,3,0,True,True,False,False,0,No Churn
-0,58,146.86,7,0,True,True,False,False,0,No Churn
+0,58,146.86,7,0,True,True,False,False,1,Churn
 0,20,63.8,5,0,False,False,True,True,0,No Churn
 0,72,43.68,9,1,True,False,False,False,1,Churn
 0,61,122.66,3,0,True,True,False,False,0,No Churn
@@ -20,15 +20,15 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,56,146.72,0,1,False,False,False,True,1,Churn
 0,33,104.54,7,0,True,False,True,False,1,Churn
 0,38,45.94,3,0,False,False,False,True,0,No Churn
-0,6,108.43,2,0,True,False,True,False,0,No Churn
+0,6,108.43,2,0,True,False,True,False,1,Churn
 0,58,29.39,6,1,False,False,False,True,1,Churn
 0,44,23.98,2,1,False,False,False,True,0,No Churn
 0,45,53.5,7,1,False,False,False,True,1,Churn
-0,32,80.14,5,0,False,False,False,False,0,No Churn
+0,32,80.14,5,0,False,False,False,False,1,Churn
 0,45,132.88,4,0,False,True,False,True,0,No Churn
 0,61,114.53,3,1,False,False,False,False,1,Churn
 1,47,116.55,7,1,False,False,False,False,1,Churn
-0,21,75.31,7,1,False,False,True,False,1,Churn
+0,21,75.31,7,1,False,False,True,False,0,No Churn
 0,36,64.97,0,0,True,False,False,True,0,No Churn
 0,19,68.24,8,1,True,False,False,True,1,Churn
 1,20,148.39,4,0,False,False,True,False,0,No Churn
@@ -47,7 +47,7 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,12,47.39,0,0,False,False,False,False,0,No Churn
 0,16,100.99,6,1,False,False,False,False,1,Churn
 1,72,102.1,1,0,True,True,False,True,0,No Churn
-1,24,115.3,1,0,False,False,False,True,0,No Churn
+1,24,115.3,1,0,False,False,False,True,1,Churn
 0,28,37.1,8,0,False,True,False,False,0,No Churn
 0,8,113.06,4,0,True,True,False,True,0,No Churn
 0,36,138.17,1,0,False,False,True,True,0,No Churn
@@ -87,27 +87,27 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,49,41.79,2,1,True,False,False,False,0,No Churn
 0,33,24.77,1,0,False,True,False,False,0,No Churn
 0,1,115.73,10,1,True,True,False,False,1,Churn
-0,21,106.29,1,0,False,False,False,False,1,Churn
+0,21,106.29,1,0,False,False,False,False,0,No Churn
 0,55,81.7,2,0,False,True,False,True,0,No Churn
-1,6,129.74,1,0,False,False,True,True,0,No Churn
-1,69,124.74,3,1,False,False,True,False,1,Churn
+1,6,129.74,1,0,False,False,True,True,1,Churn
+1,69,124.74,3,1,False,False,True,False,0,No Churn
 1,5,96.1,1,1,False,False,False,False,1,Churn
 0,3,132.88,9,1,False,False,False,True,1,Churn
-0,53,46.76,8,1,False,False,True,False,1,Churn
+0,53,46.76,8,1,False,False,True,False,0,No Churn
 1,23,34.55,1,0,False,False,True,True,0,No Churn
 0,53,55.07,8,1,False,False,False,True,1,Churn
 1,37,27.42,5,0,False,False,True,True,0,No Churn
 1,17,89.05,0,1,False,False,True,False,0,No Churn
 1,1,141.76,3,1,True,False,False,False,1,Churn
 0,51,25.11,0,0,True,True,False,True,0,No Churn
-0,45,35.87,5,1,False,False,False,False,1,Churn
+0,45,35.87,5,1,False,False,False,False,0,No Churn
 1,4,78.79,3,1,False,False,False,True,1,Churn
 0,62,141.4,2,0,False,False,False,True,1,Churn
 0,65,61.1,2,0,False,False,True,False,0,No Churn
 0,32,85.94,8,1,False,False,False,False,1,Churn
 1,34,25.4,5,0,False,False,False,False,0,No Churn
 0,72,39.28,8,1,False,False,False,False,1,Churn
-0,39,148.26,4,1,False,False,False,False,0,No Churn
+0,39,148.26,4,1,False,False,False,False,1,Churn
 0,26,145.47,1,1,True,False,True,False,1,Churn
 0,34,20.64,7,0,False,False,False,True,1,Churn
 1,54,143.74,4,1,True,False,False,True,1,Churn
@@ -117,22 +117,22 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,65,87.03,3,0,False,False,False,True,0,No Churn
 0,54,83.55,3,0,True,False,False,True,0,No Churn
 0,5,106.69,1,1,False,False,False,True,1,Churn
-0,57,38.15,5,1,False,False,False,False,1,Churn
+0,57,38.15,5,1,False,False,False,False,0,No Churn
 0,17,23.9,10,1,True,False,False,True,1,Churn
 0,47,60.03,1,0,False,False,True,False,0,No Churn
 0,23,111.61,6,1,True,False,False,True,1,Churn
 1,14,46.24,2,0,False,True,False,True,0,No Churn
 1,66,107.55,2,0,True,True,False,False,0,No Churn
-0,51,146.09,4,0,True,False,False,False,0,No Churn
+0,51,146.09,4,0,True,False,False,False,1,Churn
 0,38,32.21,2,0,False,True,False,True,0,No Churn
-0,64,107.44,1,0,False,False,False,False,1,Churn
+0,64,107.44,1,0,False,False,False,False,0,No Churn
 0,38,77.69,9,1,True,False,True,False,0,No Churn
 0,50,132.86,8,1,False,False,False,True,1,Churn
 0,30,43.03,1,0,False,False,False,False,0,No Churn
 1,51,110.04,10,1,False,False,False,False,1,Churn
 0,63,128.95,1,0,True,False,True,False,0,No Churn
 0,52,142.8,7,1,True,False,False,False,1,Churn
-0,38,108.82,8,0,True,True,False,False,0,No Churn
+0,38,108.82,8,0,True,True,False,False,1,Churn
 0,30,84.63,6,1,True,False,False,False,1,Churn
 0,51,100.32,2,0,True,True,False,False,0,No Churn
 0,5,132.96,8,1,True,False,False,False,1,Churn
@@ -142,15 +142,15 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,56,109.64,2,1,False,False,False,True,1,Churn
 0,17,107.95,6,1,True,False,False,False,1,Churn
 0,17,48.04,0,0,False,True,False,False,0,No Churn
-0,69,105.66,3,1,False,False,False,True,1,Churn
+0,69,105.66,3,1,False,False,False,True,0,No Churn
 0,34,71.2,3,0,False,True,False,False,0,No Churn
 0,6,104.66,6,1,True,False,False,True,1,Churn
 0,53,33.86,7,1,True,False,False,True,1,Churn
-0,66,105.52,0,1,True,False,False,False,1,Churn
-0,43,149.92,4,0,True,False,False,True,0,No Churn
+0,66,105.52,0,1,True,False,False,False,0,No Churn
+0,43,149.92,4,0,True,False,False,True,1,Churn
 0,23,26.27,6,0,False,True,False,False,0,No Churn
-0,55,147.03,3,0,True,False,False,False,0,No Churn
-0,16,72.9,3,1,True,False,False,True,1,Churn
+0,55,147.03,3,0,True,False,False,False,1,Churn
+0,16,72.9,3,1,True,False,False,True,0,No Churn
 0,8,133.2,3,1,True,False,True,True,1,Churn
 0,4,121.71,5,1,True,False,True,True,1,Churn
 0,4,93.71,6,1,True,False,False,False,1,Churn
@@ -178,7 +178,7 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,34,49.55,7,0,True,False,True,True,0,No Churn
 0,49,29.52,6,0,True,False,False,False,1,Churn
 0,45,98.45,4,0,True,True,False,True,0,No Churn
-0,27,106.87,0,1,True,False,False,False,1,Churn
+0,27,106.87,0,1,True,False,False,False,0,No Churn
 0,26,100.53,4,0,True,False,False,False,0,No Churn
 0,47,80.25,9,0,True,False,True,False,0,No Churn
 0,56,69.37,1,1,False,False,False,False,0,No Churn
@@ -211,7 +211,7 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,57,53.38,0,0,True,False,False,False,0,No Churn
 0,17,57.03,8,1,True,False,False,True,1,Churn
 0,44,59.95,0,1,True,False,False,True,0,No Churn
-0,25,124.39,7,0,True,True,False,False,0,No Churn
+0,25,124.39,7,0,True,True,False,False,1,Churn
 0,17,90.09,8,1,True,False,False,True,1,Churn
 1,13,60.47,8,1,True,False,False,False,1,Churn
 0,25,99.34,0,0,True,False,True,True,0,No Churn
@@ -232,14 +232,14 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,56,124.78,0,1,False,False,False,True,1,Churn
 0,59,91.53,0,0,False,False,True,True,0,No Churn
 0,70,25.64,6,0,False,False,True,False,0,No Churn
-1,33,102.31,7,1,False,True,False,False,1,Churn
+1,33,102.31,7,1,False,True,False,False,0,No Churn
 0,53,143.68,2,1,False,True,False,False,0,No Churn
 0,22,98.21,4,0,False,True,False,True,0,No Churn
 0,21,126.49,0,1,False,False,False,True,1,Churn
 0,70,134.95,6,1,False,False,True,True,1,Churn
 0,70,49.65,4,0,True,False,False,False,0,No Churn
 0,4,47.57,7,1,False,False,False,True,1,Churn
-1,62,99.43,7,0,False,False,False,True,0,No Churn
+1,62,99.43,7,0,False,False,False,True,1,Churn
 0,62,73.43,8,1,True,False,False,True,1,Churn
 0,24,129.18,6,1,False,False,False,True,1,Churn
 0,55,137.0,10,1,True,True,False,False,1,Churn
@@ -257,11 +257,11 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 1,62,41.84,3,0,True,False,True,False,0,No Churn
 0,57,115.79,10,1,True,True,False,False,1,Churn
 0,66,132.16,3,0,False,False,False,True,1,Churn
-1,8,48.18,2,1,False,False,False,True,0,No Churn
+1,8,48.18,2,1,False,False,False,True,1,Churn
 0,26,32.44,6,1,True,False,False,True,1,Churn
 0,51,23.07,2,0,True,True,False,True,0,No Churn
 1,45,103.46,2,1,False,False,False,False,0,No Churn
-1,44,98.92,10,0,True,False,False,True,0,No Churn
+1,44,98.92,10,0,True,False,False,True,1,Churn
 0,5,91.07,9,1,True,True,False,True,1,Churn
 0,70,50.15,4,0,True,False,False,False,0,No Churn
 0,26,70.82,4,0,False,True,False,False,0,No Churn
@@ -269,15 +269,15 @@ senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gende
 0,19,84.58,7,1,False,False,False,True,1,Churn
 0,20,148.41,9,1,True,True,False,True,1,Churn
 0,12,37.74,5,0,True,False,False,True,1,Churn
-0,47,110.37,0,1,False,True,False,True,1,Churn
+0,47,110.37,0,1,False,True,False,True,0,No Churn
 0,1,72.56,7,1,False,False,False,True,1,Churn
 0,14,75.67,7,1,False,False,False,True,1,Churn
 0,64,113.29,8,1,False,False,True,True,1,Churn
-0,38,110.02,8,1,True,True,False,True,1,Churn
+0,38,110.02,8,1,True,True,False,True,0,No Churn
 0,37,148.86,1,0,False,True,False,True,0,No Churn
 0,11,36.69,1,0,True,False,False,False,0,No Churn
 1,3,33.53,2,0,False,True,False,False,0,No Churn
-0,33,114.16,0,0,True,False,False,False,0,No Churn
+0,33,114.16,0,0,True,False,False,False,1,Churn
 0,6,95.19,3,0,False,False,False,True,1,Churn
 0,50,55.64,3,0,False,False,True,True,0,No Churn
 0,10,30.32,8,1,False,False,False,True,1,Churn
