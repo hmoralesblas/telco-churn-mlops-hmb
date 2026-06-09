@@ -8,7 +8,7 @@ import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 
 
 PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
@@ -43,22 +43,36 @@ def train_model() -> None:
         stratify=y
     )
 
-    n_estimators = 100
-    max_depth = 5
+    param_grid = {
+        "n_estimators": [50, 100, 200],
+        "max_depth": [3, 5, 10, None],
+        "min_samples_split": [2, 5]
+    }
 
-    model = RandomForestClassifier(
-        n_estimators=n_estimators,
-        max_depth=max_depth,
-        random_state=42
+    base_model = RandomForestClassifier(random_state=42)
+
+    grid_search = GridSearchCV(
+        estimator=base_model,
+        param_grid=param_grid,
+        scoring="f1",
+        cv=5,
+        n_jobs=-1,
+        verbose=1
     )
 
     mlflow.set_experiment("fintech_churn_mlops")
 
-    with mlflow.start_run(run_name="random_forest_churn_model"):
+    with mlflow.start_run(run_name="random_forest_gridsearch"):
 
-        model.fit(X_train, y_train)
+        print("Ejecutando GridSearchCV (24 combinaciones × 5 folds)...")
+        grid_search.fit(X_train, y_train)
 
-        y_pred = model.predict(X_test)
+        best_params = grid_search.best_params_
+        best_model = grid_search.best_estimator_
+
+        print(f"Mejores hiperparámetros: {best_params}")
+
+        y_pred = best_model.predict(X_test)
 
         accuracy = accuracy_score(y_test, y_pred)
         precision = precision_score(y_test, y_pred, zero_division=0)
@@ -66,31 +80,43 @@ def train_model() -> None:
         f1 = f1_score(y_test, y_pred, zero_division=0)
 
         mlflow.log_param("model_type", "RandomForestClassifier")
-        mlflow.log_param("n_estimators", n_estimators)
-        mlflow.log_param("max_depth", max_depth)
+        mlflow.log_param("cv_folds", 5)
+        mlflow.log_param("scoring", "f1")
         mlflow.log_param("test_size", 0.20)
         mlflow.log_param("random_state", 42)
+        mlflow.log_params(best_params)
 
         mlflow.log_metric("accuracy", accuracy)
         mlflow.log_metric("precision", precision)
         mlflow.log_metric("recall", recall)
         mlflow.log_metric("f1_score", f1)
+        mlflow.log_metric("best_cv_f1", grid_search.best_score_)
+
+        cv_results = grid_search.cv_results_
+        for i in range(len(cv_results["params"])):
+            with mlflow.start_run(run_name=f"combo_{i}", nested=True):
+                mlflow.log_params(cv_results["params"][i])
+                mlflow.log_metric("mean_cv_f1", cv_results["mean_test_score"][i])
+                mlflow.log_metric("std_cv_f1", cv_results["std_test_score"][i])
+                mlflow.log_metric("rank", int(cv_results["rank_test_score"][i]))
 
         MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
-        joblib.dump(model, MODEL_PATH)
+        joblib.dump(best_model, MODEL_PATH)
 
         metrics = {
             "accuracy": accuracy,
             "precision": precision,
             "recall": recall,
-            "f1_score": f1
+            "f1_score": f1,
+            "best_cv_f1": grid_search.best_score_,
+            "best_params": best_params
         }
 
         with open(METRICS_PATH, "w", encoding="utf-8") as file:
             json.dump(metrics, file, indent=4)
 
         mlflow.sklearn.log_model(
-            sk_model=model,
+            sk_model=best_model,
             artifact_path="model"
         )
 
@@ -101,6 +127,7 @@ def train_model() -> None:
         print(f"Precision: {precision:.4f}")
         print(f"Recall: {recall:.4f}")
         print(f"F1 Score: {f1:.4f}")
+        print(f"Best CV F1: {grid_search.best_score_:.4f}")
         print(f"Modelo guardado en: {MODEL_PATH}")
         print(f"Métricas guardadas en: {METRICS_PATH}")
 
