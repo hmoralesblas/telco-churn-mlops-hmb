@@ -118,6 +118,7 @@ def train_model() -> None:
         mlflow.sklearn.log_model(
             sk_model=best_model,
             artifact_path="model"
+            registered_model_name="TelcoChurnModel"
         )
 
         mlflow.log_artifact(str(METRICS_PATH))
