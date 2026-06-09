@@ -34,6 +34,12 @@ jobs:
         run: |
           python src/train.py
 
+      - name: Upload metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-metrics
+          path: models/metrics.json    
+
       - name: Run batch inference
         run: |
           python src/batch_predict.py
