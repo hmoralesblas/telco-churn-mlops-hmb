@@ -12,7 +12,14 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.model_selection import train_test_split, GridSearchCV
 
 
-PROJECT_ROOT = Path("processed_churn.csv").resolve().parent.parent
+try:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    print("entro al try")
+    
+except NameError:
+   
+    PROJECT_ROOT = Path("processed_churn.csv").resolve().parent.parent
+    print("entro al except")
 
 #PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
 #MODEL_PATH = Path("models/model.pkl")

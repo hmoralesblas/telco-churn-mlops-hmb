@@ -3,7 +3,14 @@ from pathlib import Path
 import joblib
 import pandas as pd
 
-PROJECT_ROOT = Path("model.pkl").resolve().parent.parent
+try:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    print("entro al try")
+    
+except NameError:
+   
+    PROJECT_ROOT = Path("model.pkl").resolve().parent.parent
+    print("entro al except")
 
 
 # MODEL_PATH          = Path("models/model.pkl")
