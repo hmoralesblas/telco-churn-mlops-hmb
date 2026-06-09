@@ -38,8 +38,20 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: model-metrics
-          path: models/metrics.json    
+          path: models/metrics.json   
+
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: churn-model
+          path: models/model.pkl 
 
       - name: Run batch inference
         run: |
           python src/batch_predict.py
+
+      - name: Upload predictions
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-predictions
+          path: data/batch_predictions.csv
