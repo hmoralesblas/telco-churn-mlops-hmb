@@ -1,5 +1,5 @@
 senior_citizen,tenure_months,monthly_charges,support_tickets_last_6m,churn,gender_Male,contract_type_One Year,contract_type_Two Year,internet_service_Fiber
-1,61,88.43,6,0,True,False,True,True
+1,61,88.43,6,0,True,False,True,True 
 0,54,115.11,1,1,False,False,True,False
 0,39,30.61,5,1,True,False,False,False
 0,19,27.85,0,0,True,True,False,True
