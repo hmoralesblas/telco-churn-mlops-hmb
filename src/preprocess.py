@@ -1,13 +1,19 @@
 import pandas as pd
 from pathlib import Path
 
-PROJECT_ROOT = Path("telco_customer_churn_mlops.csv").resolve().parent.parent
-print(PROJECT_ROOT)
+try:
+    PROJECT_ROOT = Path("telco_customer_churn_mlops.csv").resolve().parent.parent
+except NameError:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 #RAW_DATA_PATH = Path("data/telco_customer_churn_mlops.csv")
 #PROCESSED_DATA_PATH = Path("data/processed_churn.csv")
+#RAW_DATA_PATH = PROJECT_ROOT/"data/telco_customer_churn_mlops.csv"
+#PROCESSED_DATA_PATH = PROJECT_ROOT/"data/processed_churn.csv"
+
 RAW_DATA_PATH = PROJECT_ROOT/"data/telco_customer_churn_mlops.csv"
 PROCESSED_DATA_PATH = PROJECT_ROOT/"data/processed_churn.csv"
+
 
 def load_data(path: Path) -> pd.DataFrame:
     if not path.exists():
