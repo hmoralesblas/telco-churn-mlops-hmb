@@ -1,5 +1,5 @@
 customer_id,gender,senior_citizen,tenure_months,contract_type,internet_service,monthly_charges,support_tickets_last_6m,churn
-CUST0001,Male,1,61,Two Year,Fiber,88.43,6,No
+CUST0001,Male,1,61,Two Year,Fiber,88.43,6,No 
 CUST0002,Female,0,54,Two Year,DSL,115.11,1,Yes
 CUST0003,Male,0,39,Month-to-Month,None,30.61,5,Yes
 CUST0004,Male,0,19,One Year,Fiber,27.85,0,No
