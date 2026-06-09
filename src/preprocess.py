@@ -3,6 +3,7 @@ from pathlib import Path
 
 try:
     PROJECT_ROOT = Path("telco_customer_churn_mlops.csv").resolve().parent.parent
+    
 except NameError:
     PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -14,6 +15,9 @@ except NameError:
 RAW_DATA_PATH = PROJECT_ROOT/"data/telco_customer_churn_mlops.csv"
 PROCESSED_DATA_PATH = PROJECT_ROOT/"data/processed_churn.csv"
 
+print("PROJECT_ROOT:", PROJECT_ROOT)
+print("RAW_DATA_PATH:", RAW_DATA_PATH)
+print("EXISTS:", RAW_DATA_PATH.exists())
 
 def load_data(path: Path) -> pd.DataFrame:
     if not path.exists():
